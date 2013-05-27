@@ -1,0 +1,34 @@
+package es.deusto.engineering.is.kbs.domain
+
+# Importing the enumerations defined inside domain classes
+# for them to be visible to the rules.
+import es.deusto.engineering.is.kbs.domain.PotentialTenant.OccupationProfile
+import es.deusto.engineering.is.kbs.domain.Occupation.Type
+import es.deusto.engineering.is.kbs.domain.Adequacy.Income
+import es.deusto.engineering.is.kbs.domain.Adequacy.Risk
+import es.deusto.engineering.is.kbs.domain.Adequacy.Eligibility
+
+
+################### INSTRUCTIONS TO BE FOLLOWED WHEN DESIGNING YOUR RULES ##########################################
+
+# 1. Group rules by levels (top down) and branches (left to right) of your most detailed strategy diagram (decision tree).
+# 2. Interpretation rules should make a separate group at the bottom (Drools evaluates first the bottom most rules)
+# 2. Test the rules in a group before you proceed to design rules in another group
+# 3. Every rule should have a "System.out.println("Rule <Name> fired");" statement in its consequent to assist your testing
+
+############################### ESPECIAL NOTE ON OPERATORS from AND exists #########################################
+# It's likely you'll need to use Drools rule language operators "from" and "exists". 
+# Read the reference manual carefully and take into account the following warnings.
+
+# WARNING ABOUT OPERATOR "from": for each item in a collection that is an attibute of the main object
+# this operator creates an activation of the rule, i.e. it fires it again for each item. SO IT WON'T BEHAVE AS EXPECTED
+# WHEN CHANGING THE VALUES OF ATTRIBUTES THAT MAKE UP THE CONSTRAINTS OF ANOTHER BIGGER OBJECT. i.e. the
+# rule will fire only once instead of once per item in the collection because after firing once for the first
+#item in the collection, the conditions of the rule have been changed before it fires a second time on the 2nd item. 
+# THEREFORE, we can't make use of a first attribute STEP/TASK associated to the bigger object PotentialTenant, 
+# and instead we will need to use rules with more conditions
+
+# WARNING 2: The operator exists doesn't allow you to change the variable it affects
+# on the consequent of that same rule.
+
+
