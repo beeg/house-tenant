@@ -31,4 +31,177 @@ import es.deusto.engineering.is.kbs.domain.Adequacy.Eligibility
 # WARNING 2: The operator exists doesn't allow you to change the variable it affects
 # on the consequent of that same rule.
 
+rule "Determine Risk of Non-payment - Low"
+	when
+		$tenant : PotentialTenant(profile==OccupationProfile.FULL_TIME_EMPLOYEE)
+		$adequacy : Adequacy() from $tenant.offers
+		Adequacy(tenant.balance > 2*offer.cost) from $adequacy
+	then 
+		for(Adequacy a: $tenant.getOffers())	{
+			a.setDamageRisk(Risk.HIGH);
+		}
+		System.out.println("* Rule 'Determine Risk of Non-payment - Low' has executed");		
+		update($tenant);
+end
+
+rule "Determine Risk of Damage - High"
+	when
+		$tenant : PotentialTenant(profile==OccupationProfile.FULL_TIME_EMPLOYEE)
+		exists PotentialTenant(hasChildrenUnderFour == true, hasDog==true) from $tenant
+	then 
+		for(Adequacy a: $tenant.getOffers())	{
+			a.setDamageRisk(Risk.HIGH);
+		}
+		System.out.println("* Rule 'Determine Risk of Damage - High' has executed");		
+		update($tenant);
+end
+
+rule "Determine Risk of Damage - Moderate"
+	when
+		$tenant : PotentialTenant(profile==OccupationProfile.FULL_TIME_EMPLOYEE)
+		exists PotentialTenant(hasChildrenUnderFour == false, hasDog==true) from $tenant or exists PotentialTenant(hasChildrenUnderFour == true, hasDog==false) from $tenant
+	then 
+		for(Adequacy a: $tenant.getOffers())	{
+			a.setDamageRisk(Risk.MODERATE);
+		}
+		System.out.println("* Rule 'Determine Risk of Damage - Moderate' has executed");		
+		update($tenant);
+end
+
+rule "Determine Risk of Damage - Low"
+	when
+		$tenant : PotentialTenant(profile==OccupationProfile.FULL_TIME_EMPLOYEE)
+		exists PotentialTenant(hasChildrenUnderFour == false || hasDog==false) from $tenant
+	then 
+		for(Adequacy a: $tenant.getOffers())	{
+			a.setDamageRisk(Risk.LOW);
+		}
+		System.out.println("* Rule 'Determine Risk of Damage - Low' has executed");		
+		update($tenant);
+end
+
+###############################
+
+rule "Not Family liability or does not places a initial deposit"
+	when
+		$tenant : PotentialTenant(profile==OccupationProfile.PART_TIME_STUDENT_EMPLOYEE)
+		$adequacy : Adequacy(income == Income.INSUFFICIENT) from $tenant.offers		
+		exists AccountHolder(paysDeposit == false || liable==false) from $tenant.family
+	then 
+		$adequacy.setDecision(Eligibility.NON_ELIGIBLE);
+		System.out.println("* Rule 'Not Family liability or does not places a initial deposit' has executed");		
+		retract($adequacy);
+end
+
+rule "Family liability and places a initial deposit"
+	when
+		$adequacy : Adequacy(income == Income.INSUFFICIENT, tenant.profile==OccupationProfile.PART_TIME_STUDENT_EMPLOYEE) from $tenant.offers		
+		exists AccountHolder(paysDeposit == true, liable==true) from $adequacy.tenant.family
+	then 
+		$adequacy.setDecision(Eligibility.ELIGIBLE);
+		System.out.println("* Rule 'Family liability and places a initial deposit' has executed");		
+		retract($adequacy);
+end
+
+rule "Insufficient Bank Account Balance"
+	when
+		$tenant : PotentialTenant(profile==OccupationProfile.PART_TIME_STUDENT_EMPLOYEE)
+		$adequacy : Adequacy() from $tenant.offers		
+		exists Adequacy(tenant.getBalance() < offer.getCost()) from $adequacy
+	then 
+		$adequacy.setIncome(Income.INSUFFICIENT);
+		System.out.println("* Rule 'Insufficient Bank Account Balance' has executed");		
+		update($adequacy);
+end
+
+rule "Does not place deposit for Damage Risk"
+	when
+		$adequacy : Adequacy(income == Income.SUFFICIENT, tenant.profile == OccupationProfile.PART_TIME_STUDENT_EMPLOYEE, tenant.paysDeposit==false)
+	then 
+		$adequacy.setDecision(Eligibility.NON_ELIGIBLE);
+		System.out.println("* Rule 'Does not place deposit for Damage Risk' has executed");		
+		retract($adequacy);
+end
+
+rule "Place deposit for Damage Risk"
+	when
+		$adequacy : Adequacy(income == Income.SUFFICIENT, tenant.profile==OccupationProfile.PART_TIME_STUDENT_EMPLOYEE, tenant.paysDeposit==true)	
+	then 		
+		$adequacy.setDecision(Eligibility.ELIGIBLE);
+		System.out.println("* Rule 'Place deposit for Damage Risk' has executed");		
+		retract($adequacy);
+end
+
+rule "Sufficient Bank Account Balance"
+	when
+		$tenant : PotentialTenant(profile==OccupationProfile.PART_TIME_STUDENT_EMPLOYEE)
+		$adequacy : Adequacy() from $tenant.offers		
+		exists Adequacy(tenant.getBalance() >= offer.getCost()) from $adequacy
+	then 
+		$adequacy.setIncome(Income.SUFFICIENT);
+		System.out.println("* Rule 'Sufficient Bank Account Balance' has executed");		
+		update($adequacy);
+end
+
+####################################
+
+rule "Not Full-liability or not financial guarantee issued"
+	when
+		$tenant : PotentialTenant(profile==OccupationProfile.FULL_TIME_STUDENT)
+		$adequacy : Adequacy() from $tenant.offers
+		exists AccountHolder(liable==false || guarantee==false) from $tenant.family
+	then 
+		$adequacy.setDecision(Eligibility.NON_ELIGIBLE);
+		System.out.println("* Rule 'Not Full-liability or not financial guarantee issued' has executed");		
+		retract($adequacy);
+end
+
+rule "Full-liability and financial guarantee issued"
+	when
+		$tenant : PotentialTenant(profile==OccupationProfile.FULL_TIME_STUDENT)
+		$adequacy : Adequacy() from $tenant.offers
+		exists AccountHolder(liable==true, guarantee==true) from $tenant.family
+	then 
+		$adequacy.setDecision(Eligibility.CONDITIONAL);
+		System.out.println("* Rule 'Full-liability and financial guarantee issued' has executed");		
+		retract($adequacy);
+end
+
+rule "FULL TIME STUDENT tenant"
+	when
+		$tenant : PotentialTenant( profile==null )
+		exists Occupation(type==Type.STUDIES , weeklyHours >= 30) from $tenant.occupations
+	then
+		$tenant.setProfile(OccupationProfile.FULL_TIME_STUDENT);
+		for(Adequacy a: $tenant.getOffers())	{
+			a.setDamageRisk(Risk.HIGH);
+			a.setNonpaymentRisk(Risk.HIGH);
+		}		
+		System.out.println("* Rule 'FULL TIME STUDENT tenant' has executed");		
+		update($tenant);
+end
+
+rule "Part-time student and employee tenant"
+	when
+		$tenant : PotentialTenant( profile==null )
+		exists Occupation(type==Type.STUDIES , weeklyHours < 30, weeklyHours > 6) from $tenant.occupations and exists Occupation(type == Type.EMPLOYMENT,  weeklyHours < 35, weeklyHours > 6) from $tenant.occupations
+	then 
+		$tenant.setProfile(OccupationProfile.PART_TIME_STUDENT_EMPLOYEE);
+		for(Adequacy a: $tenant.getOffers())	{
+			a.setDamageRisk(Risk.MODERATE);
+			a.setNonpaymentRisk(Risk.HIGH);
+		}
+		System.out.println("* Rule 'Part-time student and employee tenant' has executed");		
+		update($tenant);
+end
+
+rule "FULL TIME EMPLOYEE tenant"
+	when
+		$tenant : PotentialTenant( profile==null )
+		exists Occupation(type==Type.EMPLOYMENT , weeklyHours > 35) from $tenant.occupations
+	then 
+		$tenant.setProfile(OccupationProfile.FULL_TIME_EMPLOYEE);
+		System.out.println("* Rule 'FULL TIME EMPLOYEE tenant' has executed");		
+		update($tenant);
+end
 

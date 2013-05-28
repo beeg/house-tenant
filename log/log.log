@@ -1,0 +1,809 @@
+<object-stream>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>Part-time student and employee tenant [1]</activationId>
+  <rule>Part-time student and employee tenant</rule>
+  <declarations>$tenant=Potential Tenant: John Smith
+	 hasChildrenUnderFour: false
+	 hasDog: true
+	 account balance = 850.0
+	 has guarantee: false
+	 will pay deposit: false
+
+	 family  is AccountHolder Peter Smith, with balance 1000.0, liable true, has guarantee true, will pay Deposit true
+
+	 occupations: [[weeklyHours=20, company=Ctro Formacion 1, type=STUDIES], [weeklyHours=20, company=Iberdrola, type=EMPLOYMENT]]
+
+	 offers: [
+		rent  identifier=1, cost=800.0, 
+		rent  identifier=2, cost=900.0](1)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>1</type>
+  <factId>1</factId>
+  <objectToString>Potential Tenant: John Smith
+	 hasChildrenUnderFour: false
+	 hasDog: true
+	 account balance = 850.0
+	 has guarantee: false
+	 will pay deposit: false
+
+	 family  is AccountHolder Peter Smith, with balance 1000.0, liable true, has guarantee true, will pay Deposit true
+
+	 occupations: [[weeklyHours=20, company=Ctro Formacion 1, type=STUDIES], [weeklyHours=20, company=Iberdrola, type=EMPLOYMENT]]
+
+	 offers: [
+		rent  identifier=1, cost=800.0, 
+		rent  identifier=2, cost=900.0]</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>FULL TIME EMPLOYEE tenant [12]</activationId>
+  <rule>FULL TIME EMPLOYEE tenant</rule>
+  <declarations>$tenant=Potential Tenant: Alice Wonderland
+	 hasChildrenUnderFour: false
+	 hasDog: false
+	 account balance = 1600.0
+	 has guarantee: false
+	 will pay deposit: true
+
+	 family null
+
+	 occupations: [[weeklyHours=40, company=IT Deusto, type=EMPLOYMENT]]
+
+	 offers: [
+		rent  identifier=1, cost=800.0, 
+		rent  identifier=2, cost=900.0](12)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>1</type>
+  <factId>12</factId>
+  <objectToString>Potential Tenant: Alice Wonderland
+	 hasChildrenUnderFour: false
+	 hasDog: false
+	 account balance = 1600.0
+	 has guarantee: false
+	 will pay deposit: true
+
+	 family null
+
+	 occupations: [[weeklyHours=40, company=IT Deusto, type=EMPLOYMENT]]
+
+	 offers: [
+		rent  identifier=1, cost=800.0, 
+		rent  identifier=2, cost=900.0]</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>FULL TIME STUDENT tenant [17]</activationId>
+  <rule>FULL TIME STUDENT tenant</rule>
+  <declarations>$tenant=Potential Tenant: Harry Potter
+	 hasChildrenUnderFour: false
+	 hasDog: false
+	 account balance = 700.0
+	 has guarantee: false
+	 will pay deposit: false
+
+	 family  is AccountHolder Lily Potter, with balance 10000.0, liable true, has guarantee true, will pay Deposit true
+
+	 occupations: [[weeklyHours=30, company=Hogwarts, type=STUDIES]]
+
+	 offers: [
+		rent  identifier=1, cost=800.0, 
+		rent  identifier=2, cost=900.0](17)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>1</type>
+  <factId>17</factId>
+  <objectToString>Potential Tenant: Harry Potter
+	 hasChildrenUnderFour: false
+	 hasDog: false
+	 account balance = 700.0
+	 has guarantee: false
+	 will pay deposit: false
+
+	 family  is AccountHolder Lily Potter, with balance 10000.0, liable true, has guarantee true, will pay Deposit true
+
+	 occupations: [[weeklyHours=30, company=Hogwarts, type=STUDIES]]
+
+	 offers: [
+		rent  identifier=1, cost=800.0, 
+		rent  identifier=2, cost=900.0]</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>1</type>
+  <factId>22</factId>
+  <objectToString> identifier=1, cost=800.0</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>1</type>
+  <factId>23</factId>
+  <objectToString> identifier=2, cost=900.0</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>1</type>
+  <factId>24</factId>
+  <objectToString>
+		rent  identifier=1, cost=800.0</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>1</type>
+  <factId>25</factId>
+  <objectToString>
+		rent  identifier=2, cost=900.0</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>1</type>
+  <factId>26</factId>
+  <objectToString>
+		rent  identifier=1, cost=800.0</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>1</type>
+  <factId>27</factId>
+  <objectToString>
+		rent  identifier=2, cost=900.0</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>1</type>
+  <factId>28</factId>
+  <objectToString>
+		rent  identifier=1, cost=800.0</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>1</type>
+  <factId>29</factId>
+  <objectToString>
+		rent  identifier=2, cost=900.0</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>FULL TIME STUDENT tenant [17]</activationId>
+  <rule>FULL TIME STUDENT tenant</rule>
+  <declarations>$tenant=Potential Tenant: Harry Potter
+	 hasChildrenUnderFour: false
+	 hasDog: false
+	 account balance = 700.0
+	 has guarantee: false
+	 will pay deposit: false
+
+	 family  is AccountHolder Lily Potter, with balance 10000.0, liable true, has guarantee true, will pay Deposit true
+
+	 occupations: [[weeklyHours=30, company=Hogwarts, type=STUDIES]]
+
+	 offers: [
+		rent  identifier=1, cost=800.0, 
+		rent  identifier=2, cost=900.0](17)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>Full-liability and financial guarantee issued [34, 17]</activationId>
+  <rule>Full-liability and financial guarantee issued</rule>
+  <declarations>$tenant=Potential Tenant: Harry Potter
+	 hasChildrenUnderFour: false
+	 hasDog: false
+	 account balance = 700.0
+	 has guarantee: false
+	 will pay deposit: false
+
+	 family  is AccountHolder Lily Potter, with balance 10000.0, liable true, has guarantee true, will pay Deposit true
+
+	 occupations: [[weeklyHours=30, company=Hogwarts, type=STUDIES]]
+
+	 PROFILE FULL_TIME_STUDENT
+
+	 offers: [
+		rent  identifier=1, cost=800.0
+			DAMAGE RISK= HIGH
+			NONPAYMENT RISK= HIGH, 
+		rent  identifier=2, cost=900.0
+			DAMAGE RISK= HIGH
+			NONPAYMENT RISK= HIGH](17); $adequacy=
+		rent  identifier=1, cost=800.0
+			DAMAGE RISK= HIGH
+			NONPAYMENT RISK= HIGH(34)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>Full-liability and financial guarantee issued [37, 17]</activationId>
+  <rule>Full-liability and financial guarantee issued</rule>
+  <declarations>$tenant=Potential Tenant: Harry Potter
+	 hasChildrenUnderFour: false
+	 hasDog: false
+	 account balance = 700.0
+	 has guarantee: false
+	 will pay deposit: false
+
+	 family  is AccountHolder Lily Potter, with balance 10000.0, liable true, has guarantee true, will pay Deposit true
+
+	 occupations: [[weeklyHours=30, company=Hogwarts, type=STUDIES]]
+
+	 PROFILE FULL_TIME_STUDENT
+
+	 offers: [
+		rent  identifier=1, cost=800.0
+			DAMAGE RISK= HIGH
+			NONPAYMENT RISK= HIGH, 
+		rent  identifier=2, cost=900.0
+			DAMAGE RISK= HIGH
+			NONPAYMENT RISK= HIGH](17); $adequacy=
+		rent  identifier=2, cost=900.0
+			DAMAGE RISK= HIGH
+			NONPAYMENT RISK= HIGH(37)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>2</type>
+  <factId>17</factId>
+  <objectToString>Potential Tenant: Harry Potter
+	 hasChildrenUnderFour: false
+	 hasDog: false
+	 account balance = 700.0
+	 has guarantee: false
+	 will pay deposit: false
+
+	 family  is AccountHolder Lily Potter, with balance 10000.0, liable true, has guarantee true, will pay Deposit true
+
+	 occupations: [[weeklyHours=30, company=Hogwarts, type=STUDIES]]
+
+	 PROFILE FULL_TIME_STUDENT
+
+	 offers: [
+		rent  identifier=1, cost=800.0
+			DAMAGE RISK= HIGH
+			NONPAYMENT RISK= HIGH, 
+		rent  identifier=2, cost=900.0
+			DAMAGE RISK= HIGH
+			NONPAYMENT RISK= HIGH]</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>FULL TIME STUDENT tenant [17]</activationId>
+  <rule>FULL TIME STUDENT tenant</rule>
+  <declarations>$tenant=Potential Tenant: Harry Potter
+	 hasChildrenUnderFour: false
+	 hasDog: false
+	 account balance = 700.0
+	 has guarantee: false
+	 will pay deposit: false
+
+	 family  is AccountHolder Lily Potter, with balance 10000.0, liable true, has guarantee true, will pay Deposit true
+
+	 occupations: [[weeklyHours=30, company=Hogwarts, type=STUDIES]]
+
+	 PROFILE FULL_TIME_STUDENT
+
+	 offers: [
+		rent  identifier=1, cost=800.0
+			DAMAGE RISK= HIGH
+			NONPAYMENT RISK= HIGH, 
+		rent  identifier=2, cost=900.0
+			DAMAGE RISK= HIGH
+			NONPAYMENT RISK= HIGH](17)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>Full-liability and financial guarantee issued [37, 17]</activationId>
+  <rule>Full-liability and financial guarantee issued</rule>
+  <declarations>$tenant=Potential Tenant: Harry Potter
+	 hasChildrenUnderFour: false
+	 hasDog: false
+	 account balance = 700.0
+	 has guarantee: false
+	 will pay deposit: false
+
+	 family  is AccountHolder Lily Potter, with balance 10000.0, liable true, has guarantee true, will pay Deposit true
+
+	 occupations: [[weeklyHours=30, company=Hogwarts, type=STUDIES]]
+
+	 PROFILE FULL_TIME_STUDENT
+
+	 offers: [
+		rent  identifier=1, cost=800.0
+			DAMAGE RISK= HIGH
+			NONPAYMENT RISK= HIGH, 
+		rent  identifier=2, cost=900.0
+			DAMAGE RISK= HIGH
+			NONPAYMENT RISK= HIGH](17); $adequacy=
+		rent  identifier=2, cost=900.0
+			DAMAGE RISK= HIGH
+			NONPAYMENT RISK= HIGH(37)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>3</type>
+  <factId>29</factId>
+  <objectToString>
+		rent  identifier=2, cost=900.0
+			DAMAGE RISK= HIGH
+			NONPAYMENT RISK= HIGH
+			DECISION: TENANT IS CONDITIONAL</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>Full-liability and financial guarantee issued [37, 17]</activationId>
+  <rule>Full-liability and financial guarantee issued</rule>
+  <declarations>$tenant=Potential Tenant: Harry Potter
+	 hasChildrenUnderFour: false
+	 hasDog: false
+	 account balance = 700.0
+	 has guarantee: false
+	 will pay deposit: false
+
+	 family  is AccountHolder Lily Potter, with balance 10000.0, liable true, has guarantee true, will pay Deposit true
+
+	 occupations: [[weeklyHours=30, company=Hogwarts, type=STUDIES]]
+
+	 PROFILE FULL_TIME_STUDENT
+
+	 offers: [
+		rent  identifier=1, cost=800.0
+			DAMAGE RISK= HIGH
+			NONPAYMENT RISK= HIGH, 
+		rent  identifier=2, cost=900.0
+			DAMAGE RISK= HIGH
+			NONPAYMENT RISK= HIGH
+			DECISION: TENANT IS CONDITIONAL](17); $adequacy=
+		rent  identifier=2, cost=900.0
+			DAMAGE RISK= HIGH
+			NONPAYMENT RISK= HIGH
+			DECISION: TENANT IS CONDITIONAL(37)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>Full-liability and financial guarantee issued [34, 17]</activationId>
+  <rule>Full-liability and financial guarantee issued</rule>
+  <declarations>$tenant=Potential Tenant: Harry Potter
+	 hasChildrenUnderFour: false
+	 hasDog: false
+	 account balance = 700.0
+	 has guarantee: false
+	 will pay deposit: false
+
+	 family  is AccountHolder Lily Potter, with balance 10000.0, liable true, has guarantee true, will pay Deposit true
+
+	 occupations: [[weeklyHours=30, company=Hogwarts, type=STUDIES]]
+
+	 PROFILE FULL_TIME_STUDENT
+
+	 offers: [
+		rent  identifier=1, cost=800.0
+			DAMAGE RISK= HIGH
+			NONPAYMENT RISK= HIGH, 
+		rent  identifier=2, cost=900.0
+			DAMAGE RISK= HIGH
+			NONPAYMENT RISK= HIGH
+			DECISION: TENANT IS CONDITIONAL](17); $adequacy=
+		rent  identifier=1, cost=800.0
+			DAMAGE RISK= HIGH
+			NONPAYMENT RISK= HIGH(34)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>3</type>
+  <factId>28</factId>
+  <objectToString>
+		rent  identifier=1, cost=800.0
+			DAMAGE RISK= HIGH
+			NONPAYMENT RISK= HIGH
+			DECISION: TENANT IS CONDITIONAL</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>Full-liability and financial guarantee issued [34, 17]</activationId>
+  <rule>Full-liability and financial guarantee issued</rule>
+  <declarations>$tenant=Potential Tenant: Harry Potter
+	 hasChildrenUnderFour: false
+	 hasDog: false
+	 account balance = 700.0
+	 has guarantee: false
+	 will pay deposit: false
+
+	 family  is AccountHolder Lily Potter, with balance 10000.0, liable true, has guarantee true, will pay Deposit true
+
+	 occupations: [[weeklyHours=30, company=Hogwarts, type=STUDIES]]
+
+	 PROFILE FULL_TIME_STUDENT
+
+	 offers: [
+		rent  identifier=1, cost=800.0
+			DAMAGE RISK= HIGH
+			NONPAYMENT RISK= HIGH
+			DECISION: TENANT IS CONDITIONAL, 
+		rent  identifier=2, cost=900.0
+			DAMAGE RISK= HIGH
+			NONPAYMENT RISK= HIGH
+			DECISION: TENANT IS CONDITIONAL](17); $adequacy=
+		rent  identifier=1, cost=800.0
+			DAMAGE RISK= HIGH
+			NONPAYMENT RISK= HIGH
+			DECISION: TENANT IS CONDITIONAL(34)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>FULL TIME EMPLOYEE tenant [12]</activationId>
+  <rule>FULL TIME EMPLOYEE tenant</rule>
+  <declarations>$tenant=Potential Tenant: Alice Wonderland
+	 hasChildrenUnderFour: false
+	 hasDog: false
+	 account balance = 1600.0
+	 has guarantee: false
+	 will pay deposit: true
+
+	 family null
+
+	 occupations: [[weeklyHours=40, company=IT Deusto, type=EMPLOYMENT]]
+
+	 offers: [
+		rent  identifier=1, cost=800.0, 
+		rent  identifier=2, cost=900.0](12)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>Determine Risk of Damage - Low [12]</activationId>
+  <rule>Determine Risk of Damage - Low</rule>
+  <declarations>$tenant=Potential Tenant: Alice Wonderland
+	 hasChildrenUnderFour: false
+	 hasDog: false
+	 account balance = 1600.0
+	 has guarantee: false
+	 will pay deposit: true
+
+	 family null
+
+	 occupations: [[weeklyHours=40, company=IT Deusto, type=EMPLOYMENT]]
+
+	 PROFILE FULL_TIME_EMPLOYEE
+
+	 offers: [
+		rent  identifier=1, cost=800.0, 
+		rent  identifier=2, cost=900.0](12)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>2</type>
+  <factId>12</factId>
+  <objectToString>Potential Tenant: Alice Wonderland
+	 hasChildrenUnderFour: false
+	 hasDog: false
+	 account balance = 1600.0
+	 has guarantee: false
+	 will pay deposit: true
+
+	 family null
+
+	 occupations: [[weeklyHours=40, company=IT Deusto, type=EMPLOYMENT]]
+
+	 PROFILE FULL_TIME_EMPLOYEE
+
+	 offers: [
+		rent  identifier=1, cost=800.0, 
+		rent  identifier=2, cost=900.0]</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>FULL TIME EMPLOYEE tenant [12]</activationId>
+  <rule>FULL TIME EMPLOYEE tenant</rule>
+  <declarations>$tenant=Potential Tenant: Alice Wonderland
+	 hasChildrenUnderFour: false
+	 hasDog: false
+	 account balance = 1600.0
+	 has guarantee: false
+	 will pay deposit: true
+
+	 family null
+
+	 occupations: [[weeklyHours=40, company=IT Deusto, type=EMPLOYMENT]]
+
+	 PROFILE FULL_TIME_EMPLOYEE
+
+	 offers: [
+		rent  identifier=1, cost=800.0, 
+		rent  identifier=2, cost=900.0](12)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>Determine Risk of Damage - Low [12]</activationId>
+  <rule>Determine Risk of Damage - Low</rule>
+  <declarations>$tenant=Potential Tenant: Alice Wonderland
+	 hasChildrenUnderFour: false
+	 hasDog: false
+	 account balance = 1600.0
+	 has guarantee: false
+	 will pay deposit: true
+
+	 family null
+
+	 occupations: [[weeklyHours=40, company=IT Deusto, type=EMPLOYMENT]]
+
+	 PROFILE FULL_TIME_EMPLOYEE
+
+	 offers: [
+		rent  identifier=1, cost=800.0, 
+		rent  identifier=2, cost=900.0](12)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>3</type>
+  <factId>12</factId>
+  <objectToString>Potential Tenant: Alice Wonderland
+	 hasChildrenUnderFour: false
+	 hasDog: false
+	 account balance = 1600.0
+	 has guarantee: false
+	 will pay deposit: true
+
+	 family null
+
+	 occupations: [[weeklyHours=40, company=IT Deusto, type=EMPLOYMENT]]
+
+	 PROFILE FULL_TIME_EMPLOYEE
+
+	 offers: [
+		rent  identifier=1, cost=800.0
+			DAMAGE RISK= LOW, 
+		rent  identifier=2, cost=900.0
+			DAMAGE RISK= LOW]</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>Determine Risk of Damage - Low [-1]</activationId>
+  <rule>Determine Risk of Damage - Low</rule>
+  <declarations></declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>Part-time student and employee tenant [1]</activationId>
+  <rule>Part-time student and employee tenant</rule>
+  <declarations>$tenant=Potential Tenant: John Smith
+	 hasChildrenUnderFour: false
+	 hasDog: true
+	 account balance = 850.0
+	 has guarantee: false
+	 will pay deposit: false
+
+	 family  is AccountHolder Peter Smith, with balance 1000.0, liable true, has guarantee true, will pay Deposit true
+
+	 occupations: [[weeklyHours=20, company=Ctro Formacion 1, type=STUDIES], [weeklyHours=20, company=Iberdrola, type=EMPLOYMENT]]
+
+	 offers: [
+		rent  identifier=1, cost=800.0, 
+		rent  identifier=2, cost=900.0](1)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>Insufficient Bank Account Balance [51, 1]</activationId>
+  <rule>Insufficient Bank Account Balance</rule>
+  <declarations>$tenant=Potential Tenant: John Smith
+	 hasChildrenUnderFour: false
+	 hasDog: true
+	 account balance = 850.0
+	 has guarantee: false
+	 will pay deposit: false
+
+	 family  is AccountHolder Peter Smith, with balance 1000.0, liable true, has guarantee true, will pay Deposit true
+
+	 occupations: [[weeklyHours=20, company=Ctro Formacion 1, type=STUDIES], [weeklyHours=20, company=Iberdrola, type=EMPLOYMENT]]
+
+	 PROFILE PART_TIME_STUDENT_EMPLOYEE
+
+	 offers: [
+		rent  identifier=1, cost=800.0
+			DAMAGE RISK= MODERATE
+			NONPAYMENT RISK= HIGH, 
+		rent  identifier=2, cost=900.0
+			DAMAGE RISK= MODERATE
+			NONPAYMENT RISK= HIGH](1); $adequacy=
+		rent  identifier=2, cost=900.0
+			DAMAGE RISK= MODERATE
+			NONPAYMENT RISK= HIGH(51)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>Sufficient Bank Account Balance [58, 1]</activationId>
+  <rule>Sufficient Bank Account Balance</rule>
+  <declarations>$tenant=Potential Tenant: John Smith
+	 hasChildrenUnderFour: false
+	 hasDog: true
+	 account balance = 850.0
+	 has guarantee: false
+	 will pay deposit: false
+
+	 family  is AccountHolder Peter Smith, with balance 1000.0, liable true, has guarantee true, will pay Deposit true
+
+	 occupations: [[weeklyHours=20, company=Ctro Formacion 1, type=STUDIES], [weeklyHours=20, company=Iberdrola, type=EMPLOYMENT]]
+
+	 PROFILE PART_TIME_STUDENT_EMPLOYEE
+
+	 offers: [
+		rent  identifier=1, cost=800.0
+			DAMAGE RISK= MODERATE
+			NONPAYMENT RISK= HIGH, 
+		rent  identifier=2, cost=900.0
+			DAMAGE RISK= MODERATE
+			NONPAYMENT RISK= HIGH](1); $adequacy=
+		rent  identifier=1, cost=800.0
+			DAMAGE RISK= MODERATE
+			NONPAYMENT RISK= HIGH(58)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>2</type>
+  <factId>1</factId>
+  <objectToString>Potential Tenant: John Smith
+	 hasChildrenUnderFour: false
+	 hasDog: true
+	 account balance = 850.0
+	 has guarantee: false
+	 will pay deposit: false
+
+	 family  is AccountHolder Peter Smith, with balance 1000.0, liable true, has guarantee true, will pay Deposit true
+
+	 occupations: [[weeklyHours=20, company=Ctro Formacion 1, type=STUDIES], [weeklyHours=20, company=Iberdrola, type=EMPLOYMENT]]
+
+	 PROFILE PART_TIME_STUDENT_EMPLOYEE
+
+	 offers: [
+		rent  identifier=1, cost=800.0
+			DAMAGE RISK= MODERATE
+			NONPAYMENT RISK= HIGH, 
+		rent  identifier=2, cost=900.0
+			DAMAGE RISK= MODERATE
+			NONPAYMENT RISK= HIGH]</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>Part-time student and employee tenant [1]</activationId>
+  <rule>Part-time student and employee tenant</rule>
+  <declarations>$tenant=Potential Tenant: John Smith
+	 hasChildrenUnderFour: false
+	 hasDog: true
+	 account balance = 850.0
+	 has guarantee: false
+	 will pay deposit: false
+
+	 family  is AccountHolder Peter Smith, with balance 1000.0, liable true, has guarantee true, will pay Deposit true
+
+	 occupations: [[weeklyHours=20, company=Ctro Formacion 1, type=STUDIES], [weeklyHours=20, company=Iberdrola, type=EMPLOYMENT]]
+
+	 PROFILE PART_TIME_STUDENT_EMPLOYEE
+
+	 offers: [
+		rent  identifier=1, cost=800.0
+			DAMAGE RISK= MODERATE
+			NONPAYMENT RISK= HIGH, 
+		rent  identifier=2, cost=900.0
+			DAMAGE RISK= MODERATE
+			NONPAYMENT RISK= HIGH](1)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>Sufficient Bank Account Balance [58, 1]</activationId>
+  <rule>Sufficient Bank Account Balance</rule>
+  <declarations>$tenant=Potential Tenant: John Smith
+	 hasChildrenUnderFour: false
+	 hasDog: true
+	 account balance = 850.0
+	 has guarantee: false
+	 will pay deposit: false
+
+	 family  is AccountHolder Peter Smith, with balance 1000.0, liable true, has guarantee true, will pay Deposit true
+
+	 occupations: [[weeklyHours=20, company=Ctro Formacion 1, type=STUDIES], [weeklyHours=20, company=Iberdrola, type=EMPLOYMENT]]
+
+	 PROFILE PART_TIME_STUDENT_EMPLOYEE
+
+	 offers: [
+		rent  identifier=1, cost=800.0
+			DAMAGE RISK= MODERATE
+			NONPAYMENT RISK= HIGH, 
+		rent  identifier=2, cost=900.0
+			DAMAGE RISK= MODERATE
+			NONPAYMENT RISK= HIGH](1); $adequacy=
+		rent  identifier=1, cost=800.0
+			DAMAGE RISK= MODERATE
+			NONPAYMENT RISK= HIGH(58)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>2</type>
+  <factId>24</factId>
+  <objectToString>
+		rent  identifier=1, cost=800.0
+			INCOME= SUFFICIENT
+			DAMAGE RISK= MODERATE
+			NONPAYMENT RISK= HIGH</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>Sufficient Bank Account Balance [58, 1]</activationId>
+  <rule>Sufficient Bank Account Balance</rule>
+  <declarations>$tenant=Potential Tenant: John Smith
+	 hasChildrenUnderFour: false
+	 hasDog: true
+	 account balance = 850.0
+	 has guarantee: false
+	 will pay deposit: false
+
+	 family  is AccountHolder Peter Smith, with balance 1000.0, liable true, has guarantee true, will pay Deposit true
+
+	 occupations: [[weeklyHours=20, company=Ctro Formacion 1, type=STUDIES], [weeklyHours=20, company=Iberdrola, type=EMPLOYMENT]]
+
+	 PROFILE PART_TIME_STUDENT_EMPLOYEE
+
+	 offers: [
+		rent  identifier=1, cost=800.0
+			INCOME= SUFFICIENT
+			DAMAGE RISK= MODERATE
+			NONPAYMENT RISK= HIGH, 
+		rent  identifier=2, cost=900.0
+			DAMAGE RISK= MODERATE
+			NONPAYMENT RISK= HIGH](1); $adequacy=
+		rent  identifier=1, cost=800.0
+			INCOME= SUFFICIENT
+			DAMAGE RISK= MODERATE
+			NONPAYMENT RISK= HIGH(58)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>Insufficient Bank Account Balance [51, 1]</activationId>
+  <rule>Insufficient Bank Account Balance</rule>
+  <declarations>$tenant=Potential Tenant: John Smith
+	 hasChildrenUnderFour: false
+	 hasDog: true
+	 account balance = 850.0
+	 has guarantee: false
+	 will pay deposit: false
+
+	 family  is AccountHolder Peter Smith, with balance 1000.0, liable true, has guarantee true, will pay Deposit true
+
+	 occupations: [[weeklyHours=20, company=Ctro Formacion 1, type=STUDIES], [weeklyHours=20, company=Iberdrola, type=EMPLOYMENT]]
+
+	 PROFILE PART_TIME_STUDENT_EMPLOYEE
+
+	 offers: [
+		rent  identifier=1, cost=800.0
+			INCOME= SUFFICIENT
+			DAMAGE RISK= MODERATE
+			NONPAYMENT RISK= HIGH, 
+		rent  identifier=2, cost=900.0
+			DAMAGE RISK= MODERATE
+			NONPAYMENT RISK= HIGH](1); $adequacy=
+		rent  identifier=2, cost=900.0
+			DAMAGE RISK= MODERATE
+			NONPAYMENT RISK= HIGH(51)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>2</type>
+  <factId>25</factId>
+  <objectToString>
+		rent  identifier=2, cost=900.0
+			INCOME= INSUFFICIENT
+			DAMAGE RISK= MODERATE
+			NONPAYMENT RISK= HIGH</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>Insufficient Bank Account Balance [51, 1]</activationId>
+  <rule>Insufficient Bank Account Balance</rule>
+  <declarations>$tenant=Potential Tenant: John Smith
+	 hasChildrenUnderFour: false
+	 hasDog: true
+	 account balance = 850.0
+	 has guarantee: false
+	 will pay deposit: false
+
+	 family  is AccountHolder Peter Smith, with balance 1000.0, liable true, has guarantee true, will pay Deposit true
+
+	 occupations: [[weeklyHours=20, company=Ctro Formacion 1, type=STUDIES], [weeklyHours=20, company=Iberdrola, type=EMPLOYMENT]]
+
+	 PROFILE PART_TIME_STUDENT_EMPLOYEE
+
+	 offers: [
+		rent  identifier=1, cost=800.0
+			INCOME= SUFFICIENT
+			DAMAGE RISK= MODERATE
+			NONPAYMENT RISK= HIGH, 
+		rent  identifier=2, cost=900.0
+			INCOME= INSUFFICIENT
+			DAMAGE RISK= MODERATE
+			NONPAYMENT RISK= HIGH](1); $adequacy=
+		rent  identifier=2, cost=900.0
+			INCOME= INSUFFICIENT
+			DAMAGE RISK= MODERATE
+			NONPAYMENT RISK= HIGH(51)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+</object-stream>
